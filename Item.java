@@ -4,19 +4,19 @@ public class Item {
     String label;
     String description;
     String placement;
-    long timestamp;
+    Instant timeStamp;
 
     public Item(String label, String description, String placement){
         setLabel(label);
         setDescription(description);
         setPlacement(placement);
-        this.timestamp = Instant.now().getEpochSecond();
+        this.timeStamp = Instant.now();
     }
     public Item(String label, String placement){
         setLabel(label);
         setDescription("No description");
         setPlacement(placement);
-        this.timestamp = Instant.now().getEpochSecond();
+        this.timeStamp = Instant.now();
     }
 
     /* SET METHODS */
@@ -40,6 +40,8 @@ public class Item {
     public String getPlacement(){
         return this.placement;
     }
-
+    public String getDate(){
+        return this.timeStamp.toString();
+    }
 
 }
