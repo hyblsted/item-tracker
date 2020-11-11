@@ -9,19 +9,27 @@ public class ItemTracker {
 
     public void getItemByLabel(String label) {
         if(items.containsKey(label)) {
-            System.out.println("No such key");
+            System.out.println("Navn: " + items.get(label).getLabel()); 
+            System.out.println("Dato: " + items.get(label).getDate());
+            System.out.println("Beskrivelse: " + items.get(label).getDescription());
+            System.out.println("Placering: " + items.get(label).getPlacement());
+            System.out.println();
         } else {
-            items.get(label);
+            System.out.println("No such item exists ...");
         }
     }
 
     public void getAllItems() {
-        for(String item : items.keySet()){
-            System.out.println("Navn: " + items.get(item).getLabel()); 
-            System.out.println("Dato: " + items.get(item).getDate());
-            System.out.println("Beskrivelse: " + items.get(item).getDescription());
-            System.out.println("Placering: " + items.get(item).getPlacement());
-            System.out.println();
+        if(items.size() == 0){
+            System.out.println("There are no items in the item tracker ...");
+        }else{
+            for(String item : items.keySet()){
+                System.out.println("Navn: " + items.get(item).getLabel()); 
+                System.out.println("Dato: " + items.get(item).getDate());
+                System.out.println("Beskrivelse: " + items.get(item).getDescription());
+                System.out.println("Placering: " + items.get(item).getPlacement());
+                System.out.println();
+            }
         }
     }
 
@@ -30,6 +38,11 @@ public class ItemTracker {
     }
 
     public void removeItem(String label) {
-        items.remove(label);
+        if(items.containsKey(label)){
+            items.remove(label);
+            System.out.println(label + " removed!");
+        }else{
+            System.out.println("No such item exists ...");
+        }
     }
 }
