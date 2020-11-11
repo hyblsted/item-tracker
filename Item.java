@@ -34,7 +34,7 @@ public class Item {
     public String getLabel(){
         return this.label;
     }
-    public String getDescripttion(){
+    public String getDescription(){
         return this.description;
     }
     public String getPlacement(){

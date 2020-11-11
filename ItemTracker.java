@@ -1,16 +1,5 @@
 import java.util.*;
 
-/*
-** Class: ItemTracker
-** --Fields:
-** HashMap<String, Item> items
-** --Methods
-** getItemByLabel()
-** getAllItems()
-** addItem()
-** removeItem()
-*/
-
 public class ItemTracker {
     private HashMap<String, Item> items;
 
@@ -27,7 +16,13 @@ public class ItemTracker {
     }
 
     public void getAllItems() {
-        System.out.println(items);
+        for(String item : items.keySet()){
+            System.out.println("Navn: " + items.get(item).getLabel()); 
+            System.out.println("Dato: " + items.get(item).getDate());
+            System.out.println("Beskrivelse: " + items.get(item).getDescription());
+            System.out.println("Placering: " + items.get(item).getPlacement());
+            System.out.println();
+        }
     }
 
     public void addItem(String label, String description, String placement) {
