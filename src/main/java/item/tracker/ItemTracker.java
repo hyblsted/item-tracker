@@ -1,3 +1,5 @@
+package item.tracker;
+
 import java.util.*;
 
 public class ItemTracker {
@@ -7,15 +9,12 @@ public class ItemTracker {
         items = new HashMap<>();
     }
 
-    public void getItemByLabel(String label) {
+    public Item getItemByLabel(String label) {
         if(items.containsKey(label)) {
-            System.out.println("Navn: " + items.get(label).getLabel()); 
-            System.out.println("Dato: " + items.get(label).getDate());
-            System.out.println("Beskrivelse: " + items.get(label).getDescription());
-            System.out.println("Placering: " + items.get(label).getPlacement());
-            System.out.println();
-        } else {
+            return items.get(label);
+        }else{
             System.out.println("No such item exists ...");
+            return null;
         }
     }
 

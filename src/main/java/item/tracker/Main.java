@@ -1,3 +1,5 @@
+package item.tracker;
+
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +16,7 @@ public class Main {
         System.out.println();
 
         Scanner in = new Scanner(System.in);
-
+        
         while(in.hasNextLine()){
             String line = in.nextLine();
             if(line.equals("quit")) break;
